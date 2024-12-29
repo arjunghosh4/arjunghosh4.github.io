@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <title>Arjun Krishna Ghosh - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +12,7 @@
     <header>
         <div class="container">
             <h1>Arjun Krishna Ghosh</h1>
-            <p>Analyst</p>
+            <p>Data Analyst | Problem Solver | Lifelong Learner</p>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
@@ -25,82 +26,66 @@
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>Hey there! 👋
-
-                I’m Arjun Ghosh, a curious soul on a never-ending quest for growth, learning, and a sprinkle of fun along the way. By day, I’m diving deep into the world of data, tech, and analytics—turning messy numbers into meaningful stories. By night, I’m the kind of person who Googles “how to make sourdough bread” and ends up learning about the physics of yeast for hours.
-                
-                My journey started in the bustling world of IT, where I learned to solve problems (and occasionally create new ones while fixing the old ones). Now, I’m all about blending my technical skills with my passion for creativity to carve out solutions that make an impact.
-                
-                When I’m not geeking out over datasets or brainstorming the next big thing, you can find me experimenting in the kitchen, losing myself in a book, or binge-watching documentaries I’ll later overshare about.
-                
-                This space is where I document my adventures—be it tackling a challenging course, diving into a new hobby, or figuring out how to balance work, life, and whatever’s in between.
-                
-                Stick around for the quirks, the fails, the triumphs, and maybe a pun or two (okay, definitely a pun or two). Let’s learn, laugh, and grow together!</p>
+            <div class="about-content">
+                <img src="arjun.jpg" alt="Arjun Krishna Ghosh" class="profile-picture">
+                <p>Hey there! 👋<br><br>
+                I’m Arjun Ghosh, a curious soul on a never-ending quest for growth, learning, and a sprinkle of fun along the way. By day, I dive deep into the world of data, tech, and analytics—turning messy numbers into meaningful stories. By night, I explore new hobbies and binge-watch documentaries. <br><br>
+                My journey started in IT, where I honed problem-solving skills and developed a passion for creative solutions. I’m excited to continue blending technical expertise with creativity to make a real impact.<br><br>
+                Stick around to learn more about my projects, adventures, and thoughts!</p>
+            </div>
         </div>
     </section>
 
     <section id="projects">
         <div class="container">
             <h2>Projects</h2>
+            
             <div class="project">
-                <img src="SpotifyThumbail.jpeg" alt="Project 1">
+                <img src="SpotifyThumbnail.jpeg" alt="Spotify Wrapped 2024">
                 <h3>Spotify Wrapped 2024</h3>
-                <p>This project replicates the engaging Spotify Wrapped experience, showcasing personalized music listening habits through a visually dynamic dashboard. Built using Python, Dash, and Plotly, it highlights top tracks, artists, and genres while offering an intuitive interface for data exploration.
-                    Features:
-
-                    Personalized Insights: Visualize your top tracks, artists, and genres with precision.
-                    Interactive Visualizations: Dynamic charts powered by Plotly for immersive data analysis.
-                    Simple Deployment: Clone, install dependencies, and run locally to dive in.
-                
-                
-                </p>
+                <p>This project replicates the engaging Spotify Wrapped experience with personalized music listening habits.</p>
+                <ul>
+                    <li><strong>Features:</strong>
+                        <ul>
+                            <li>Personalized Insights: Visualize top tracks, artists, and genres.</li>
+                            <li>Interactive Visualizations: Built using Python, Dash, and Plotly.</li>
+                            <li>Simple Deployment: Easily run locally with provided dependencies.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Technologies:</strong> Python, Dash, Plotly, Pandas</li>
+                </ul>
             </div>
+            
             <div class="project">
-                <img src="fakenews.png" alt="Project 2">
+                <img src="fakenews.png" alt="AI Fake News Detector">
                 <h3>AI Powered Fake News Detector</h3>
-                <p>Developed a full-stack AI-powered application to detect fake news articles by analyzing text content for credibility.
-
-                    Key Achievements:
-                    
-                    Built an AI model using BERT for fake news classification.
-                    Integrated a Flask backend with a React frontend for seamless user interaction.
-                    Designed and managed a PostgreSQL database for storing predictions.
-                    Created dynamic Tableau dashboards for business intelligence and insights.
-                    Utilized Google Colab for model training with GPU resources.
-                    Tools and Technologies:
-                    
-                    AI/ML: Hugging Face Transformers, PyTorch
-                    Backend: Flask, SQLAlchemy
-                    Frontend: React, Axios
-                    Database: PostgreSQL, pgAdmin
-                    BI: Tableau for data visualization</p>
+                <p>An AI-powered application for detecting fake news articles based on text content.</p>
+                <ul>
+                    <li><strong>Key Achievements:</strong>
+                        <ul>
+                            <li>Built a BERT-based AI model for fake news classification.</li>
+                            <li>Integrated Flask backend with React frontend for seamless user interaction.</li>
+                            <li>Designed Tableau dashboards for BI insights.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Technologies:</strong> Hugging Face Transformers, Flask, PostgreSQL, Tableau</li>
+                </ul>
             </div>
-            <div class="project"></div>
-                <img src="SS10.jpg" alt="">
+            
+            <div class="project">
+                <img src="SS10.jpg" alt="Chatbot with Amazon Lex">
                 <h3>Chatbot with Amazon Lex</h3>
-                <p>A BankerBot chatbot leveraging Amazon Lex to handle banking-related queries such as balance inquiries, enhancing user experience with natural language processing.
-
-                    Key Achievements:
-                    
-                    Configured intents (e.g., CheckBalance, WelcomeIntent) and slots for personalized interactions.
-                    Integrated AWS Lambda to generate dynamic, real-time responses for bank balance inquiries.
-                    Designed fallback mechanisms with user-friendly messages for unrecognized inputs.
-                    Reduced repetitive prompts by enabling Lex to remember user details like account type.
-                    Tools and Technologies:
-                    
-                    AWS Lex: For creating the chatbot and managing intents.
-                    AWS Lambda: To generate real-time responses and implement custom logic.
-                    Key Features:
-                    Dynamic balance inquiries powered by Lambda.
-                    User verification through custom slots (e.g., account type, date of birth).
-                    Multiple fallback variations for natural and engaging conversations.
-                    Key Learnings:
-                    
-                    Seamless integration of Amazon Lex with Lambda for dynamic interactions.
-                    Optimized chatbot responses with a confidence threshold of 0.40 for better accuracy.
-                    Gained experience in building conversational interfaces for real-world applications.
-                
-                </p>
+                <p>A BankerBot chatbot leveraging Amazon Lex to handle banking-related queries like balance inquiries.</p>
+                <ul>
+                    <li><strong>Key Features:</strong>
+                        <ul>
+                            <li>Dynamic balance inquiries powered by AWS Lambda.</li>
+                            <li>User verification with custom slots (e.g., account type, date of birth).</li>
+                            <li>Fallback mechanisms for natural user interaction.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Technologies:</strong> Amazon Lex, AWS Lambda, Python</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -109,13 +94,13 @@
         <div class="container">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:arjun.ghosh97@yahoo.in">arjun.ghosh97@yahoo.in</a></p>
-            <p>LinkedIn: <a href="www.linkedin.com/in/ghosharjun">ghosharjun</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/ghosharjun" target="_blank">linkedin.com/in/ghosharjun</a></p>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Arjun Ghosh. All Rights Reserved.</p>
+            <p>&copy; 2024 Arjun Krishna Ghosh. All Rights Reserved.</p>
         </div>
     </footer>
 

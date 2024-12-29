@@ -1,119 +1,132 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* style.css */
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
     line-height: 1.6;
-    background-color: #f4f4f4;
     color: #333;
+    background-color: #f9f9f9;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-/* Header */
 header {
-    background: #333;
+    background: #0078d7;
     color: white;
     padding: 20px 0;
     text-align: center;
 }
 
 header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    margin: 0;
+    font-size: 2.5rem;
 }
 
 header p {
-    font-size: 1.2em;
+    font-size: 1.2rem;
+    margin-top: 5px;
 }
 
 header nav ul {
     list-style: none;
+    padding: 0;
 }
 
 header nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1em;
+    font-weight: bold;
 }
 
-/* Section Styles */
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
 section {
-    padding: 50px 0;
+    padding: 40px 0;
+}
+
+#about, #projects, #contact {
     text-align: center;
 }
 
-section h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+#about p {
+    max-width: 800px;
+    margin: auto;
+    text-align: justify;
 }
 
-section p {
-    font-size: 1.2em;
-}
-
-/* Projects */
 .project {
-    display: inline-block;
-    width: 45%;
-    margin: 20px 2%;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    margin: 20px 0;
     padding: 20px;
-    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
 }
 
 .project img {
-    max-width: 100%;
+    max-width: 200px;
     border-radius: 5px;
+    margin-right: 20px;
 }
 
 .project h3 {
-    margin-top: 20px;
-    font-size: 1.8em;
+    margin: 0;
+    font-size: 1.5rem;
 }
 
-/* Footer */
+.project p {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+#contact a {
+    color: #0078d7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
 footer {
     background: #333;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
+    font-size: 0.8rem;
 }
 
 footer p {
-    font-size: 1em;
+    margin: 0;
 }
 
-/* Mobile Responsiveness */
-@media screen and (max-width: 768px) {
+/* Add responsiveness */
+@media (max-width: 768px) {
     .project {
-        width: 100%;
+        flex-direction: column;
+        text-align: center;
     }
 
-    header h1 {
-        font-size: 2em;
+    .project img {
+        margin: 0 0 20px 0;
     }
 
-    header p {
-        font-size: 1em;
-    }
-
-    section h2 {
-        font-size: 2em;
+    header nav ul li {
+        display: block;
+        margin: 5px 0;
     }
 }

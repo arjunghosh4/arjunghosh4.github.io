@@ -3,103 +3,93 @@
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
+    padding: 0;
     line-height: 1.6;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: #f4f4f9;
 }
 
 header {
-    background: #0078d7;
+    background: linear-gradient(135deg, #0078d7, #0056a6);
     color: white;
-    padding: 20px 0;
     text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 header p {
     font-size: 1.2rem;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 header nav ul {
     list-style: none;
     padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 header nav ul li a {
-    color: white;
     text-decoration: none;
+    color: white;
     font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
 header nav ul li a:hover {
-    text-decoration: underline;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .container {
     width: 90%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
+    padding: 20px 0;
 }
 
-section {
-    padding: 40px 0;
+#about img.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
 
-#about, #projects, #contact {
+#projects .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
 
-#about p {
-    max-width: 800px;
-    margin: auto;
-    text-align: justify;
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.project {
-    background: white;
-    margin: 20px 0;
-    padding: 20px;
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-}
-
-.project img {
-    max-width: 200px;
-    border-radius: 5px;
-    margin-right: 20px;
-}
-
-.project h3 {
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-.project p {
-    font-size: 0.9rem;
-    margin-top: 10px;
-    text-align: justify;
-}
-
-#contact a {
-    color: #0078d7;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#contact a:hover {
-    text-decoration: underline;
+    margin-bottom: 15px;
 }
 
 footer {
@@ -107,26 +97,19 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 footer p {
     margin: 0;
 }
 
-/* Add responsiveness */
-@media (max-width: 768px) {
-    .project {
-        flex-direction: column;
-        text-align: center;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-
-    .project img {
-        margin: 0 0 20px 0;
-    }
-
-    header nav ul li {
-        display: block;
-        margin: 5px 0;
+    to {
+        opacity: 1;
     }
 }

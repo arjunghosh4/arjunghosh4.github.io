@@ -1,115 +1,125 @@
-/* style.css */
-
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
     color: #333;
-    background-color: #f4f4f9;
-}
-
-header {
-    background: linear-gradient(135deg, #0078d7, #0056a6);
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-header p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-header nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background-color: #f9f9f9;
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
     margin: auto;
-    padding: 20px 0;
 }
 
-#about img.profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 15px;
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 1000;
 }
 
-#projects .projects-grid {
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar .nav-links a:hover {
+    color: #0078d7;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(to bottom, #0078d7, #0056a6);
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero .btn {
+    padding: 10px 20px;
+    background: white;
+    color: #0078d7;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.hero .btn:hover {
+    background: #0056a6;
+    color: white;
+}
+
+/* About Section */
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Projects */
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
 .project-card {
-    background: white;
-    padding: 20px;
+    position: relative;
+    overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .project-card img {
     width: 100%;
-    height: 150px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 15px;
 }
 
-footer {
-    background: #333;
+.project-info {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
     color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9rem;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
-footer p {
-    margin: 0;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.project-card:hover .project-info {
+    opacity: 1;
 }

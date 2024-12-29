@@ -5,69 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arjun Krishna Ghosh - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <h1>Arjun Krishna Ghosh</h1>
-            <p>Data Analyst | Problem Solver | Lifelong Learner</p>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <a href="#" class="logo">Arjun Ghosh</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Hi, I'm Arjun Krishna Ghosh</h1>
+            <p>Data Analyst | Problem Solver | Creator</p>
+            <a href="#projects" class="btn">Explore My Work</a>
         </div>
     </header>
 
-    <section id="about">
+    <!-- About Section -->
+    <section id="about" class="section">
         <div class="container">
             <h2>About Me</h2>
-            <div class="about-content">
+            <div class="about-grid">
                 <img src="your-picture.jpg" alt="Arjun Krishna Ghosh" class="profile-picture">
-                <p>I’m Arjun Ghosh, a data enthusiast with a knack for turning messy numbers into meaningful stories. I thrive on solving real-world problems through analytics and creativity. Stick around to learn more about my projects and experiences!</p>
+                <div>
+                    <p>I am a passionate data analyst with experience in transforming data into actionable insights. I specialize in analytics, machine learning, and data visualization. I love solving problems and delivering value through technology.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="projects">
+    <!-- Projects Section -->
+    <section id="projects" class="section">
         <div class="container">
-            <h2>Projects</h2>
+            <h2>My Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <img src="SpotifyThumbnail.jpeg" alt="Spotify Wrapped">
-                    <h3>Spotify Wrapped 2024</h3>
-                    <p>Replicates Spotify Wrapped experience with engaging dashboards.</p>
+                    <div class="project-info">
+                        <h3>Spotify Wrapped 2024</h3>
+                        <p>Dynamic dashboards built with Python, Dash, and Plotly.</p>
+                    </div>
                 </div>
                 <div class="project-card">
                     <img src="fakenews.png" alt="Fake News Detector">
-                    <h3>AI Fake News Detector</h3>
-                    <p>AI-powered application for detecting fake news articles.</p>
+                    <div class="project-info">
+                        <h3>AI Fake News Detector</h3>
+                        <p>AI-powered application for detecting fake news articles.</p>
+                    </div>
                 </div>
                 <div class="project-card">
                     <img src="SS10.jpg" alt="Chatbot">
-                    <h3>Chatbot with Amazon Lex</h3>
-                    <p>BankerBot for banking-related queries using Amazon Lex.</p>
+                    <div class="project-info">
+                        <h3>Chatbot with Amazon Lex</h3>
+                        <p>BankerBot for banking queries using Amazon Lex and AWS Lambda.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="section">
         <div class="container">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:arjun.ghosh97@yahoo.in">arjun.ghosh97@yahoo.in</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/ghosharjun" target="_blank">linkedin.com/in/ghosharjun</a></p>
+            <div class="contact-grid">
+                <a href="mailto:arjun.ghosh97@yahoo.in"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/ghosharjun" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Arjun Krishna Ghosh. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2024 Arjun Krishna Ghosh. All Rights Reserved.</p>
     </footer>
 
 </body>

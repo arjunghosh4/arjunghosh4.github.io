@@ -1,4 +1,5 @@
-title: "Arjun Ghosh Portfolio"
-description: "Data Analyst | Data Scientist | Cloud Business Analytics"
-show_downloads: false
-theme: jekyll-theme-cayman
+title: Slate theme
+description: Slate is a theme for GitHub Pages.
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-slate

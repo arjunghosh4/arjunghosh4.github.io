@@ -8,7 +8,7 @@ const Hero = () => {
           Hi, I'm Arjun.AI.
         </h1>
         <h2 className="text-2xl md:text-3xl text-muted-foreground font-light">
-          The AI-powered Data & Cloud Analyst built by Arjun Krishna Ghosh.
+          The AI-powered Data & Cloud Analyst built by Arjun Ghosh.
         </h2>
         <p className="text-lg text-accent font-medium">
           Ask me about my projects, skills, or experience.

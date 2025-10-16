@@ -1,0 +1,90 @@
+{
+    "summary": "Arjun Krishna Ghosh is a Data & Cloud Analytics professional with 6+ years of experience spanning data engineering, analytics, and product intelligence. He has built and optimized cloud-native ETL/ELT pipelines, automated dashboards, and GenAI-powered assistants across connected-vehicle, telecom, and academic research domains.",
+  
+    "skills": {
+      "technical": [
+        "Python (Pandas, NumPy, Scikit-learn, Streamlit, LangChain)",
+        "SQL (PostgreSQL, MySQL, Redshift)",
+        "AWS (Glue, S3, Lambda, Redshift, DynamoDB, Bedrock, EC2)",
+        "dbt, Apache Airflow, Terraform, Docker",
+        "Power BI, Tableau, Looker",
+        "Neo4j, PySpark, Hadoop",
+        "ServiceNow Platform Analytics, Performance Analytics, Splunk",
+        "Generative AI (RAG, LLM integration, Bedrock, LangChain)"
+      ],
+      "product_and_management": [
+        "Agile/Scrum, Sprint Planning, Stakeholder Management",
+        "Product Roadmapping, UAT, A/B Testing, KPI Dashboards"
+      ]
+    },
+  
+    "experience": {
+      "SageNet": {
+        "role": "Data Analyst Intern – NOC Analytics",
+        "timeline": "May 2024 – Present",
+        "achievements": [
+          "Automated SLA tracking dashboards in ServiceNow using Performance Analytics, saving ~12 hours/month in manual reporting.",
+          "Built multi-tab dashboards (Case Data Analysis, Knowledge Management) covering volume, ART, escalations, and customer-level trends.",
+          "Delivered Tableau and Power BI analytics across 3M+ network events, improving visibility of uptime and reducing MTTR by 3.5 hours.",
+          "Enabled $60K/year SLA recovery through predictive incident detection and reduction of recurring NOC tickets."
+        ]
+      },
+  
+      "Tata Consultancy Services": {
+        "role": "Data Analyst / Data Engineer",
+        "timeline": "Nov 2018 – May 2024",
+        "achievements": [
+          "Led cloud migration for Stellantis’ connected-vehicle platform (Uconnect / Free2Move), transitioning on-prem systems to AWS ahead of schedule.",
+          "Processed 200M+ monthly vehicle telemetry events using AWS Glue, Redshift, and S3; optimized ETL latency from 15 min to 3 min.",
+          "Developed dbt + Airflow data models powering subscription and UBI dashboards; improved safe-driving score accuracy from 82% → 96%.",
+          "Created cost-optimization dashboards cutting $400K+ annual hardware spend and 50% reduction in incident resolution time via Splunk monitoring.",
+          "Architected phased rollout for AWS migration (10% → 100% load) ensuring zero downtime and faster deployment validation."
+        ]
+      },
+  
+      "Georgia State University": {
+        "role": "Graduate Research / Teaching Assistant",
+        "timeline": "Aug 2023 – Present",
+        "achievements": [
+          "Built AI-powered chatbot prototypes for academic support using Python + BERT + Flask.",
+          "Automated data collection and ETL for 5K+ survey responses per cycle, saving 15 hours/week and improving response rates by 22%.",
+          "Assisted in research on LLM and Hadoop-based analytics pipelines for Generative AI applications and graph-based fraud detection (Neo4j)."
+        ]
+      }
+    },
+  
+    "projects": {
+      "AdTech Data Platform": {
+        "overview": "End-to-end AdTech analytics platform that processes ~100K ad events/hour through Kafka → dbt → PostgreSQL, generating real-time ROAS and segmentation insights.",
+        "impact": "Built a lightweight Decision Intelligence Assistant using RAG + LLMs enabling natural-language querying of campaign data, improving optimization speed by ~40%."
+      },
+      "Fraud Detection with Neo4j": {
+        "overview": "Graph-based fraud detection system modeling transactions, shared identifiers, and high-risk jurisdictions to uncover suspicious money flows.",
+        "impact": "Streamlined risk-detection logic and visualized networks of fraudulent entities using Neo4j and Streamlit."
+      },
+      "Private Markets Portfolio Dashboard": {
+        "overview": "Power BI dashboard for StepStone-style investment analytics visualizing IRR, MOIC, and cash-flow trends across mock private-equity data.",
+        "impact": "Delivered interactive waterfall and treemap visuals to help investors assess fund performance and allocation efficiency."
+      },
+      "Construction Analytics Dashboard": {
+        "overview": "Power BI solution for Linesight-type construction portfolio management with five tabs (Portfolio Overview, Budget Tracker, Schedule Analysis, Cash Flow, RCA).",
+        "impact": "Provided granular visibility into project cost variance and root-cause metrics enabling proactive risk mitigation."
+      },
+      "AI Email Response System": {
+        "overview": "LangChain-based agentic assistant that classifies and auto-replies to academic or client emails using vector search and prompt chaining.",
+        "impact": "Reduced average response time by 85% and demonstrated practical GenAI workflow automation."
+      }
+    },
+  
+    "education": {
+      "masters": "M.S. in Computer Information Systems (Big Data Analytics, AI) – Georgia State University",
+      "bachelors": "B.E. in Electronics Engineering – University of Mumbai"
+    },
+  
+    "metrics_summary": {
+      "years_experience": 6,
+      "projects_built": 15,
+      "data_points_processed": "3M+ per month",
+      "annual_cost_savings": "$2.5M+ combined impact"
+    }
+  }

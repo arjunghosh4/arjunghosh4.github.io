@@ -12,17 +12,13 @@ interface Message {
 const ChatInterface = () => {
   const [message, setMessage] = useState("");
   const [conversation, setConversation] = useState<Message[]>([]);
-  const inputRef = useRef<HTMLInputElement | null>(null);
-  const messagesContainerRef = useRef<HTMLDivElement | null>(null);
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null); // 👈 auto-focus hook
 
-  // 🔽 Scrolls only inside the chat container
+  // 🔽 Scroll to latest message on every update
   useEffect(() => {
-    const container = messagesContainerRef.current;
-    if (container) {
-      container.scrollTo({
-        top: container.scrollHeight,
-        behavior: "smooth",
-      });
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [conversation]);
 
@@ -68,14 +64,11 @@ const ChatInterface = () => {
 
   return (
     <section className="py-12 px-4">
-      <div className="max-w-3xl mx-auto flex flex-col space-y-6">
+      <div className="max-w-3xl mx-auto space-y-6">
         {/* Conversation Display */}
-        <div
-          ref={messagesContainerRef}
-          className="flex-1 space-y-4 mb-6 max-h-96 overflow-y-auto p-4 bg-card/50 rounded-xl border border-primary/20 scroll-smooth"
-        >
-          {conversation.length > 0 ? (
-            conversation.map((msg, index) => (
+        {conversation.length > 0 && (
+          <div className="space-y-4 mb-6 max-h-96 overflow-y-auto p-4 bg-card/50 rounded-xl border border-primary/20">
+            {conversation.map((msg, index) => (
               <div
                 key={index}
                 className={`flex ${
@@ -99,13 +92,10 @@ const ChatInterface = () => {
                   </div>
                 </div>
               </div>
-            ))
-          ) : (
-            <div className="text-center text-muted-foreground py-12">
-              Start the conversation — ask about my work, projects, or skills.
-            </div>
-          )}
-        </div>
+            ))}
+            <div ref={messagesEndRef} />
+          </div>
+        )}
 
         {/* Quick Action Buttons */}
         <div className="flex flex-wrap gap-3 justify-center mb-6">
@@ -130,9 +120,9 @@ const ChatInterface = () => {
         </div>
 
         {/* Input Area */}
-        <div className="sticky bottom-0 bg-background py-2 flex gap-3 items-center border-t border-primary/10">
+        <div className="flex gap-3 items-center">
           <Input
-            ref={inputRef}
+            ref={inputRef} // 👈 keeps input active
             type="text"
             placeholder="Ask me anything about my work…"
             value={message}

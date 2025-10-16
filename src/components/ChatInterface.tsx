@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Send } from "lucide-react";
@@ -12,73 +12,54 @@ interface Message {
 const ChatInterface = () => {
   const [message, setMessage] = useState("");
   const [conversation, setConversation] = useState<Message[]>([]);
-  const inputRef = useRef<HTMLInputElement | null>(null);
-  const latestMessageRef = useRef<HTMLDivElement | null>(null);
-
-  // ✅ Focus input but without forcing page scroll (fixes hero skip)
-  useEffect(() => {
-    inputRef.current?.focus({ preventScroll: true });
-  }, [conversation]);
-
-  // ✅ Scroll so top of latest assistant message is visible
-  useEffect(() => {
-    if (latestMessageRef.current) {
-      latestMessageRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  }, [conversation]);
 
   const handleSend = async () => {
     if (!message.trim()) return;
-
-    const userMessage: Message = { role: "user", content: message };
+  
+    const userMessage: Message = { role: 'user', content: message };
     setConversation((prev) => [...prev, userMessage]);
-    setMessage("");
-
+    setMessage('');
+  
     try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message }),
       });
-
+  
       const data = await res.json();
+  
       const aiMessage: Message = {
-        role: "assistant",
+        role: 'assistant',
         content: data.reply,
       };
-
+  
       setConversation((prev) => [...prev, aiMessage]);
-    } catch {
+    } catch (err) {
       const errorMessage: Message = {
-        role: "assistant",
-        content: "Sorry, something went wrong while processing your question.",
+        role: 'assistant',
+        content: 'Sorry, something went wrong while processing your question.',
       };
       setConversation((prev) => [...prev, errorMessage]);
     }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") handleSend();
+    if (e.key === "Enter") {
+      handleSend();
+    }
   };
 
   return (
     <section className="py-12 px-4">
-      <div className="max-w-3xl mx-auto flex flex-col space-y-6">
-        {/* ✅ Show chat only after first message */}
+      <div className="max-w-3xl mx-auto space-y-6">
+        {/* Conversation Display */}
         {conversation.length > 0 && (
           <div className="space-y-4 mb-6 max-h-96 overflow-y-auto p-4 bg-card/50 rounded-xl border border-primary/20">
             {conversation.map((msg, index) => (
               <div
                 key={index}
-                ref={
-                  index === conversation.length - 1 ? latestMessageRef : null
-                }
-                className={`flex ${
-                  msg.role === "user" ? "justify-end" : "justify-start"
-                }`}
+                className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 <div
                   className={`max-w-[80%] px-4 py-3 rounded-xl ${
@@ -88,9 +69,7 @@ const ChatInterface = () => {
                   }`}
                 >
                   {msg.role === "assistant" && (
-                    <div className="text-xs text-primary font-semibold mb-1">
-                      Arjun.AI
-                    </div>
+                    <div className="text-xs text-primary font-semibold mb-1">Arjun.AI</div>
                   )}
                   <div className="text-sm leading-relaxed prose prose-invert max-w-none">
                     <ReactMarkdown>{msg.content}</ReactMarkdown>
@@ -100,7 +79,7 @@ const ChatInterface = () => {
             ))}
           </div>
         )}
-
+        
         {/* Quick Action Buttons */}
         <div className="flex flex-wrap gap-3 justify-center mb-6">
           {[
@@ -112,10 +91,7 @@ const ChatInterface = () => {
           ].map((q) => (
             <button
               key={q}
-              onClick={() => {
-                setMessage(q);
-                handleSend();
-              }}
+              onClick={() => setMessage(q)}
               className="bg-primary/20 text-primary px-4 py-2 rounded-xl hover:bg-primary/30 transition"
             >
               {q}
@@ -126,7 +102,6 @@ const ChatInterface = () => {
         {/* Input Area */}
         <div className="flex gap-3 items-center">
           <Input
-            ref={inputRef}
             type="text"
             placeholder="Ask me anything about my work…"
             value={message}

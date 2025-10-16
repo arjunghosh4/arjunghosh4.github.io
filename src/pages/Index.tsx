@@ -15,12 +15,6 @@ const Index = () => {
       <main className="flex-1">
         <Hero />
         <ChatInterface />
-        <section className="text-center py-10 text-muted-foreground text-sm border-t border-primary/20">
-          <p>
-            I created <strong>Arjun.AI</strong> as a personal experiment to blend storytelling and technology — 
-            turning my resume and data projects into an interactive experience powered by LangChain and AWS Bedrock.
-          </p>
-        </section>
         <QuickActions />
         <MetricsSection />
         

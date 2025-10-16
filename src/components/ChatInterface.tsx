@@ -71,9 +71,9 @@ const ChatInterface = () => {
                   {msg.role === "assistant" && (
                     <div className="text-xs text-primary font-semibold mb-1">Arjun.AI</div>
                   )}
-                  <ReactMarkdown className="text-sm leading-relaxed prose prose-invert max-w-none">
-                    {msg.content}
-                  </ReactMarkdown>
+                  <div className="text-sm leading-relaxed prose prose-invert max-w-none">
+                    <ReactMarkdown>{msg.content}</ReactMarkdown>
+                  </div>
                 </div>
               </div>
             ))}

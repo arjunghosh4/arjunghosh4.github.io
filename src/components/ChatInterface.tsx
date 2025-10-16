@@ -15,18 +15,19 @@ const ChatInterface = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const messagesContainerRef = useRef<HTMLDivElement | null>(null);
 
-  // ✅ Scroll only inside the chat container — to the top of new message
+  // ✅ Scroll inside chat container to top of last message
   useEffect(() => {
     const container = messagesContainerRef.current;
-    if (container) {
-      container.scrollTo({
-        top: container.scrollHeight - container.clientHeight,
-        behavior: "smooth",
-      });
-    }
+    if (!container) return;
+
+    // Scroll to show latest assistant message from the top
+    container.scrollTo({
+      top: container.scrollHeight - container.clientHeight - 50, // offset to show start
+      behavior: "smooth",
+    });
   }, [conversation]);
 
-  // ✅ Keep input focused after every message
+  // ✅ Keep input focused after each message
   useEffect(() => {
     inputRef.current?.focus();
   }, [conversation]);
@@ -56,7 +57,8 @@ const ChatInterface = () => {
     } catch {
       const errorMessage: Message = {
         role: "assistant",
-        content: "Sorry, something went wrong while processing your question.",
+        content:
+          "Sorry, something went wrong while processing your question.",
       };
       setConversation((prev) => [...prev, errorMessage]);
     }
@@ -69,7 +71,7 @@ const ChatInterface = () => {
   return (
     <section className="py-12 px-4">
       <div className="max-w-3xl mx-auto flex flex-col space-y-6">
-        {/* ✅ Only show conversation box after chat starts */}
+        {/* ✅ Conversation only appears after user starts chatting */}
         {conversation.length > 0 && (
           <div
             ref={messagesContainerRef}
@@ -103,7 +105,7 @@ const ChatInterface = () => {
           </div>
         )}
 
-        {/* Quick Action Buttons */}
+        {/* Quick Buttons */}
         <div className="flex flex-wrap gap-3 justify-center mb-6">
           {[
             "Who is Arjun?",
@@ -125,8 +127,8 @@ const ChatInterface = () => {
           ))}
         </div>
 
-        {/* ✅ Input stays fixed visually but doesn't block the hero section */}
-        <div className="flex gap-3 items-center mt-auto">
+        {/* Input */}
+        <div className="flex gap-3 items-center">
           <Input
             ref={inputRef}
             type="text"

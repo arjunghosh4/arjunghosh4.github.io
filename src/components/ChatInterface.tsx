@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Send } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 
 interface Message {
   role: "user" | "assistant";
@@ -70,7 +71,9 @@ const ChatInterface = () => {
                   {msg.role === "assistant" && (
                     <div className="text-xs text-primary font-semibold mb-1">Arjun.AI</div>
                   )}
-                  <p className="text-sm leading-relaxed">{msg.content}</p>
+                  <ReactMarkdown className="text-sm leading-relaxed prose prose-invert max-w-none">
+                    {msg.content}
+                  </ReactMarkdown>
                 </div>
               </div>
             ))}
@@ -95,7 +98,7 @@ const ChatInterface = () => {
             </button>
           ))}
         </div>
-        
+
         {/* Input Area */}
         <div className="flex gap-3 items-center">
           <Input

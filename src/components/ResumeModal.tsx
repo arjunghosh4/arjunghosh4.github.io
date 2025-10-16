@@ -18,7 +18,7 @@ const ResumeModal = ({ open, onOpenChange }: ResumeModalProps) => {
         <DialogHeader>
           <DialogTitle className="text-2xl glow-text">Arjun Krishna Ghosh</DialogTitle>
           <DialogDescription className="text-sm text-muted-foreground">
-            Data & Cloud Analytics Professional | 6+ Years Experience | AI / Data Engineering / Product Analytics
+            Data & Cloud Analytics Professional | 6+ Years Experience | AI/Data Engineering/Product Analytics
           </DialogDescription>
         </DialogHeader>
 
@@ -41,8 +41,8 @@ const ResumeModal = ({ open, onOpenChange }: ResumeModalProps) => {
             <div className="border-l-2 border-primary/30 pl-4 space-y-4">
 
               <div>
-                <h4 className="font-semibold">Data Analyst Intern — SageNet (NOC Analytics)</h4>
-                <p className="text-xs text-muted-foreground">June 2025 – August 2025  • Atlanta, GA (Remote)</p>
+                <h4 className="font-semibold">Data Analyst Intern - SageNet (NOC Analytics)</h4>
+                <p className="text-xs text-muted-foreground">June 2025 – August 2025  • Atlanta, GA</p>
                 <ul className="mt-2 list-disc list-inside space-y-1">
                   <li>Built multi-tab ServiceNow dashboards for case volume and SLA trends, saving ~12 hours/month in manual reporting.</li>
                   <li>Reduced Mean Time to Resolution by 3.5 hours and enabled $60K/year SLA recovery through predictive incident tracking.</li>
@@ -50,7 +50,7 @@ const ResumeModal = ({ open, onOpenChange }: ResumeModalProps) => {
               </div>
 
               <div>
-                <h4 className="font-semibold">Graduate Research Assistant — Georgia State University</h4>
+                <h4 className="font-semibold">Graduate Research Assistant - Georgia State University</h4>
                 <p className="text-xs text-muted-foreground">August 2024 – May 2025  • Atlanta, GA</p>
                 <ul className="mt-2 list-disc list-inside space-y-1">
                   <li>Developed AI-based academic chatbot using BERT + Flask and automated survey ETLs for 5K + records per cycle.</li>
@@ -61,7 +61,7 @@ const ResumeModal = ({ open, onOpenChange }: ResumeModalProps) => {
           </section>
 
               <div>
-                <h4 className="font-semibold">Cloud Data Engineer/Analyst — Tata Consultancy Services (Stellantis Account)</h4>
+                <h4 className="font-semibold">Cloud Data Engineer/Analyst - Tata Consultancy Services (Stellantis Account)</h4>
                 <p className="text-xs text-muted-foreground">November 2018 – May 2024  • Mumbai, India</p>
                 <ul className="mt-2 list-disc list-inside space-y-1">
                   <li>Led AWS migration for connected-vehicle platforms (Uconnect, Free2Move), processing 200M + telematics events monthly.</li>
@@ -81,7 +81,7 @@ const ResumeModal = ({ open, onOpenChange }: ResumeModalProps) => {
                 <p className="text-xs text-muted-foreground">Georgia State University • 2024-2025</p>
               </div>
               <div>
-                <h4 className="font-semibold">B.E. in Electronics Engineering</h4>
+                <h4 className="font-semibold">B.S. in Electronics Engineering</h4>
                 <p className="text-xs text-muted-foreground">University of Mumbai • 2014-2018</p>
               </div>
             </div>

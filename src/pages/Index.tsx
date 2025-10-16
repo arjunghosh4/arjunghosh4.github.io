@@ -6,6 +6,7 @@ import MetricsSection from "@/components/MetricsSection";
 import ContactModal from "@/components/ContactModal";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Analytics } from "@vercel/analytics/next"
 
 const Index = () => {
   const [contactOpen, setContactOpen] = useState(false);

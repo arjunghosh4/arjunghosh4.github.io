@@ -13,23 +13,21 @@ const ChatInterface = () => {
   const [message, setMessage] = useState("");
   const [conversation, setConversation] = useState<Message[]>([]);
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const messagesContainerRef = useRef<HTMLDivElement | null>(null);
+  const latestMessageRef = useRef<HTMLDivElement | null>(null);
 
-  // ✅ Scroll inside chat container to top of last message
+  // ✅ Focus input but without forcing page scroll (fixes hero skip)
   useEffect(() => {
-    const container = messagesContainerRef.current;
-    if (!container) return;
-
-    // Scroll to show latest assistant message from the top
-    container.scrollTo({
-      top: container.scrollHeight - container.clientHeight - 50, // offset to show start
-      behavior: "smooth",
-    });
+    inputRef.current?.focus({ preventScroll: true });
   }, [conversation]);
 
-  // ✅ Keep input focused after each message
+  // ✅ Scroll so top of latest assistant message is visible
   useEffect(() => {
-    inputRef.current?.focus();
+    if (latestMessageRef.current) {
+      latestMessageRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   }, [conversation]);
 
   const handleSend = async () => {
@@ -47,7 +45,6 @@ const ChatInterface = () => {
       });
 
       const data = await res.json();
-
       const aiMessage: Message = {
         role: "assistant",
         content: data.reply,
@@ -57,8 +54,7 @@ const ChatInterface = () => {
     } catch {
       const errorMessage: Message = {
         role: "assistant",
-        content:
-          "Sorry, something went wrong while processing your question.",
+        content: "Sorry, something went wrong while processing your question.",
       };
       setConversation((prev) => [...prev, errorMessage]);
     }
@@ -71,15 +67,15 @@ const ChatInterface = () => {
   return (
     <section className="py-12 px-4">
       <div className="max-w-3xl mx-auto flex flex-col space-y-6">
-        {/* ✅ Conversation only appears after user starts chatting */}
+        {/* ✅ Show chat only after first message */}
         {conversation.length > 0 && (
-          <div
-            ref={messagesContainerRef}
-            className="space-y-4 mb-6 max-h-96 overflow-y-auto p-4 bg-card/50 rounded-xl border border-primary/20 scroll-smooth"
-          >
+          <div className="space-y-4 mb-6 max-h-96 overflow-y-auto p-4 bg-card/50 rounded-xl border border-primary/20">
             {conversation.map((msg, index) => (
               <div
                 key={index}
+                ref={
+                  index === conversation.length - 1 ? latestMessageRef : null
+                }
                 className={`flex ${
                   msg.role === "user" ? "justify-end" : "justify-start"
                 }`}
@@ -105,7 +101,7 @@ const ChatInterface = () => {
           </div>
         )}
 
-        {/* Quick Buttons */}
+        {/* Quick Action Buttons */}
         <div className="flex flex-wrap gap-3 justify-center mb-6">
           {[
             "Who is Arjun?",
@@ -127,7 +123,7 @@ const ChatInterface = () => {
           ))}
         </div>
 
-        {/* Input */}
+        {/* Input Area */}
         <div className="flex gap-3 items-center">
           <Input
             ref={inputRef}
